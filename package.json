@@ -1,7 +1,7 @@
 {
-  "name": "carbonizer",
+  "name": "Carbon Syntax Highlighter",
   "icon": "./assets/icon.png",
-  "displayName": "carbonizer",
+  "displayName": "Carbon Syntax Highlighter",
   "description": "A syntax highlighter for the Carbon programming language",
   "version": "0.0.1",
   "author": "Rohan Vashisht",
