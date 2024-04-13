@@ -1,5 +1,5 @@
 {
-  "name": "Carbon Syntax Highlighter",
+  "name": "Carbon Code Colorizer",
   "icon": "./assets/icon.png",
   "displayName": "Carbon Syntax Highlighter",
   "description": "A syntax highlighter for the Carbon programming language",
