@@ -15,7 +15,7 @@
       "id": "carbon",
       "aliases": ["carbon", "carbon"],
       "extensions": [".carbon"],
-      "configuration": "./language-configuration.json"
+      "configuration": "./src/language-configuration.json"
     }],
     "grammars": [{
       "language": "carbon",
