@@ -1,0 +1,66 @@
+%YAML 1.2
+---
+name: Carbon
+file_extensions:
+  - carbon
+scope: source.carbon
+
+contexts:
+  main:
+    # All the keywords
+    - match: \b(package|import|fn|var|for|return|class|api|i8|i16|i32|i64|i128|i256|u8|u16|u32|u64|u128|u256|f8|f16|f32|f64|f128|if|else|auto|let|File|while|match|case|default|returned|base|bool|virtual|abstract|String|true|false)\b
+      scope: keyword.control.carbon
+    # All the operator type of keywords
+    - match: \b(impl|Main|extend|partial|Self|Int|UInt|Base|template)\b
+      scope: entity.name.carbon
+    # Highlighting for functions:
+    - match: \b[a-zA-Z]+\s*(?=\()
+      scope: entity.name.function.carbon
+    - match: (?<=\bpackage\s)\w+
+      scope: entity.name.constant.carbon
+    - match: (?<=\blet\s)\w+
+      scope: entity.name.constant.carbon
+    - match: (?<=\bvar\s)\w+
+      scope: entity.name.constant.carbon
+    - match: (?<=\bimpl\s)\w+
+      scope: entity.name.constant.carbon
+    - match: (?<=\bimport\s)\w+
+      scope: entity.name.constant.carbon
+    - match: (?<=\bclass\s)\w+
+      scope: entity.name.constant.carbon
+    - match: '"'
+      scope: punctuation.definition.string.begin.carbon
+      push: double_quoted_string
+    - match: "'"
+      scope: punctuation.definition.string.begin.carbon
+      push: single_quote_string
+    - match: '//'
+      scope: punctuation.definition.comment.carbon
+      push: line_comment
+    - match: \b\d+\b
+      scope: constant.numeric.carbon
+    - match: \b\d+\.\d+\b
+      scope: constant.numeric.carbon
+    - match: \b\d{1,3}(?:_\d{3})*\b
+      scope: constant.numeric.carbon
+    - match: \b(\+|-|\*|/|!)\b
+      scope: keyword.operator.carbon
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.carbon
+    - match: '\\.'
+      scope: constant.character.escape.carbon
+    - match: '"'
+      scope: punctuation.definition.string.end.carbon
+      pop: true
+  line_comment:
+    - meta_scope: comment.line.example-c
+    - match: $
+      pop: true
+  single_quote_string:
+    - meta_scope: string.quoted.single.carbon
+    - match: '\\.'
+      scope: constant.character.escape.carbon
+    - match: "'"
+      scope: punctuation.definition.string.end.ecarbon
+      pop: true
