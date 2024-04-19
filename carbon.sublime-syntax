@@ -54,7 +54,7 @@ contexts:
       scope: punctuation.definition.string.end.carbon
       pop: true
   line_comment:
-    - meta_scope: comment.line.example-c
+    - meta_scope: comment.line.carbon
     - match: $
       pop: true
   single_quote_string:
@@ -62,5 +62,5 @@ contexts:
     - match: '\\.'
       scope: constant.character.escape.carbon
     - match: "'"
-      scope: punctuation.definition.string.end.ecarbon
+      scope: punctuation.definition.string.end.carbon
       pop: true
